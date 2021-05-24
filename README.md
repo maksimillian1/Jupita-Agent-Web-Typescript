@@ -3,13 +3,14 @@
 
 # Getting Started with Jupita Agent Web TypeScript
 
-This library is used to make API calls that will be used by the Jupita Agent, fully supports the 3 APIs that available for Jupita Agent.
+This library is used to make API calls that will be used by the Jupita Agent, fully supports the 3 APIs that available for Jupita Agent. All API calls are made asynchronously, thus there are event listeners available to handle the API results.
 
 ## APIs
-There are 3 APIs within the Jupita Agent product:
-* `Dump`: allows you to send the utterances you wish to send.
-* `Rating`: allows you to retrieve the rating for the agent in question.
-* `Feed`: provides you with some basic rating analytics
+There are 3 APIs within the Juptia Agent product – `dump` `rating` & `feed`:
+
+- Dump allows you to send the utterances you wish to send.
+- rating allows you to retrieve the rating for the agent in question.
+- feed provides you with some basic rating analytics.
 
 
 ##  QuickStart
@@ -71,7 +72,7 @@ Parameters:
 
 If the API returns 200 the response is an object
 
-```json
+```
 {
 "message": "Dumped Conversation",
 "score": 62.0781855859
@@ -81,7 +82,7 @@ If the API returns 200 the response is an object
 ### Call `Feed` API
 
 
-```js
+```
 agent.feed({
     onError: function(statusCode, response){
         console.log(statusCode)
@@ -97,7 +98,7 @@ agent.feed({
 
 If the API returns 200 the response is an object
 
-```js
+```
 {
 "best day": null,
 "day difference": null,
@@ -119,23 +120,23 @@ To call the API rating is quite easy because it already has built-in parameters 
 
 you can call this method with
 
-```js
+```
 agent.rating()
 ```
 or
 
-```js
+```
 agent.rating(ModelName.JUPITA1)
 ```
 or
 
-```js
+```
 agent.rating(ModelName.JUPITA1, listener)
 ```
 
 If the API returns 200 the response is a JSON with
 
-```js
+```
 {
   "rating": 41.6108763005
 }
@@ -181,7 +182,7 @@ To avoid illegal argument error for the `message_type` argument, use `MessageTyp
 
 ### `Rating` Method Definition
 
-```js
+```
 rating(model_name=ModelName.JUPITAV1, listener: defaultListener|null|undefined=null)
 ```
 The second rating definition is created for future use when there will be multiple models to choose from. At the moment only 1 model (*JupitaV1*) is supported. 
