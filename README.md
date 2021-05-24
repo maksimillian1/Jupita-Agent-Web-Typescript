@@ -1,7 +1,7 @@
 
 ![npm](https://img.shields.io/npm/v/@jupita/jupita-agent-sdk)
 
-# Getting Started with Jupita Agent Web TypeScript
+# Jupita Agent TypeScript SDK
 
 This library is used to make API calls that will be used by the Jupita Agent, fully supports the 3 APIs that available for Jupita Agent.
 
