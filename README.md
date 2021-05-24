@@ -5,13 +5,11 @@
 
 This library is used to make API calls that will be used by the Jupita Agent, fully supports the 3 APIs that available for Jupita Agent.
 
-
+## APIs
+There are 3 APIs within the Jupita Agent product:
 * `Dump`: allows you to send the utterances you wish to send.
 * `Rating`: allows you to retrieve the rating for the agent in question.
 * `Feed`: provides you with some basic rating analytics
-
-
-
 
 
 ##  QuickStart
@@ -27,7 +25,7 @@ The first step is initialize the SDK and add required auth like `token`, `agentI
 
 ### Initialization
 
-```js
+```
 var jupita = require("@jupita/jupita-agent-sdk")
 var token = "some token"
 var agentId = "111"
@@ -39,7 +37,7 @@ var client = new jupita.Agent(token, agentId)
 
 `dump` has an optional parameter when it is not supplied, the default parameters is
 
-```js
+```
 {
     userType: UserType.Agent,
     callback: function(error, succcess){
@@ -50,7 +48,7 @@ var client = new jupita.Agent(token, agentId)
 
 Call the dump API as a message from Agent by specifying the message and clientId below;
 
-```js
+```
 agent.dump("welcome to this app", 1, 1, false, {
     onError: function(statusCode, response){
         console.log(statusCode)
@@ -63,7 +61,7 @@ agent.dump("welcome to this app", 1, 1, false, {
 })
 ```
 
-#### Parameters:
+Parameters:
 
 * text (*required*)
 * client_id (*required*)
@@ -143,21 +141,21 @@ If the API returns 200 the response is a JSON with
 }
 ```
 
-### Error Code
+## Error Codes
 
 Error codes thrown are `401` when the token is incorrect and `400` when there is an attempt to dump gibberish content to the server, although the model does have an inbuilt gibberish detector.
 
-### Library
+## Libraries
 
 Use Step [Initialization](###initialization)
 that the Jupita Agent Web SDK is available within the scope of the project 
 
 
-### Classes
+## Classes
 
 The available product under the Jupita Agent Web SDK is call [read this](###initialization) 
 
-### Error Handling
+## Error Handling
 
 The SDK have an `InvalidParameterException` exception that will arises when:
 - `message_type` parameter in the `dump` method is not `1` or `0`
@@ -165,11 +163,11 @@ The SDK have an `InvalidParameterException` exception that will arises when:
 
 
 
-### Class Method Definition
+## Class Method Definition
 
-#### `Dump` Method Definition
+### `Dump` Method Definition
 
-```js
+```
 dump(text: string, client_id: number, message_type: number = MessageType.Agent, isCall = false, listener: defaultListener|null|undefined=null)
 ```
 
@@ -181,7 +179,7 @@ dump(text: string, client_id: number, message_type: number = MessageType.Agent, 
 
 To avoid illegal argument error for the `message_type` argument, use `MessageType.Agent` for agent, and `MessageType.Client` for client.
 
-#### `Rating` Method Definition
+### `Rating` Method Definition
 
 ```js
 rating(model_name=ModelName.JUPITAV1, listener: defaultListener|null|undefined=null)
@@ -192,9 +190,9 @@ To avoid illegal argument error use `ModelName.JUPITAV1` for the modelName.
 
 `DefaultListener` is an interface which needs to be implemented to listen to results of the rating call
 
-#### `Feed` Method Definition
+### `Feed` Method Definition
 
-```js
+```
 feed(listener: defaultListener)
 ```
 
