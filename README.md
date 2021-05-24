@@ -1,10 +1,10 @@
 
+![npm](https://img.shields.io/npm/v/@jupita/jupita-agent-sdk)
+
 # Getting Started with Jupita Agent Web TypeScript
 
----
+This library is used to make API calls that will be used by the Jupita Agent, fully supports the 3 APIs that available for Jupita Agent.
 
-This library is used to make API calls that will be used by the Jupita Agent, fully supports the 3 APIs available for Jupita Agent, 
-here are the APIs provided
 
 * `Dump`: allows you to send the utterances you wish to send.
 * `Rating`: allows you to retrieve the rating for the agent in question.
@@ -13,31 +13,31 @@ here are the APIs provided
 
 
 
+
+##  QuickStart
+
 ### Installation
 
----
+```
+npm install @jupita/jupita-agent-sdk
+```
 
-jupita Agent Web Typescript SDK installation guide
 
-# QuickStart
-
-the first step is initialize the SDK and add required auth like `token`, `agentId` then initialize the class object
+The first step is initialize the SDK and add required auth like `token`, `agentId` then initialize the class object
 
 ### Initialization
 
-add required auth 
-
 ```js
+var jupita = require("@jupita/jupita-agent-sdk")
 var token = "some token"
 var agentId = "111"
-var client = JupitaClient(token, agentId)
+var client = new jupita.Agent(token, agentId)
 ```
-
 
 
 ### Call `Dump` API
 
-`dump` has a optional parameter when it is not supplied, it defaults to
+`dump` has an optional parameter when it is not supplied, the default parameters is
 
 ```js
 {
@@ -62,15 +62,16 @@ agent.dump("welcome to this app", 1, 1, false, {
     }
 })
 ```
-in dump method have a default parameter like
+
+#### Parameters:
 
 * text (*required*)
 * client_id (*required*)
 * message_type (optional, default = Agent)
 * isCall (optional, default=false)
-* listener (optional, if not defined then the API will not be called, it will return the response `Listener is not Defined`)
+* listener (optional, if not defined then the API will not be called)
 
-If the API returns 200 the response is a JSON with
+If the API returns 200 the response is an object
 
 ```json
 {
@@ -81,7 +82,6 @@ If the API returns 200 the response is a JSON with
 
 ### Call `Feed` API
 
-Call the feed API
 
 ```js
 agent.feed({
@@ -97,7 +97,7 @@ agent.feed({
 ```
 
 
-If the API returns 200 the response is a JSON with
+If the API returns 200 the response is an object
 
 ```js
 {
@@ -109,20 +109,22 @@ If the API returns 200 the response is a JSON with
 }
 ```
 
+The parameter is optional. You can also call it by `agent.feed()`
+
 ### Call `Rating` API
 
-to call the API rating is quite easy because it already has built-in parameters such as
+To call the API rating is quite easy because it already has built-in parameters such as
 
 * `model_name` with a default value `JupitaV1`
 * `listener` if not defined you got `Rating api value is Null`
 
-If the API returns 200 the response is a JSON with
 
 you can call this method with
 
 ```js
 agent.rating()
 ```
+or
 
 ```js
 agent.rating(ModelName.JUPITA1)
@@ -157,7 +159,11 @@ The available product under the Jupita Agent Web SDK is call [read this](###init
 
 ### Error Handling
 
-the SDK have `InvalidParameterException` this arises if the message type set in the dump method is not 1 or 0, or the model name in rating method is not `JupitaV1`.
+The SDK have an `InvalidParameterException` exception that will arises when:
+- `message_type` parameter in the `dump` method is not `1` or `0`
+- `model name` paramter in the `rating` method is not `JupitaV1` or `JupitaV2`
+
+
 
 ### Class Method Definition
 
@@ -173,14 +179,18 @@ dump(text: string, client_id: number, message_type: number = MessageType.Agent, 
 * isCall (optional, default=false)
 * listener (optional)
 
-If the values of type and `isCall` are not provided by default the values are considered as `MessageType.Agent` and false. Thus `text` and the `clientId` are essential when creating a dump request
+To avoid illegal argument error for the `message_type` argument, use `MessageType.Agent` for agent, and `MessageType.Client` for client.
 
 #### `Rating` Method Definition
 
 ```js
 rating(model_name=ModelName.JUPITAV1, listener: defaultListener|null|undefined=null)
 ```
-The second rating definition is created for future use when there will be multiple models to choose from. At the moment only 1 model (*JupitaV1*) is supported. To avoid illegal argument error use `ModelName.JUPITAV1` for the modelName. `DefaultListener` is an interface which needs to be implemented to listen to results of the rating call
+The second rating definition is created for future use when there will be multiple models to choose from. At the moment only 1 model (*JupitaV1*) is supported. 
+
+To avoid illegal argument error use `ModelName.JUPITAV1` for the modelName. 
+
+`DefaultListener` is an interface which needs to be implemented to listen to results of the rating call
 
 #### `Feed` Method Definition
 
@@ -188,4 +198,4 @@ The second rating definition is created for future use when there will be multip
 feed(listener: defaultListener)
 ```
 
-`DefaultdListener` is an interface which needs to be implemented to listen to results of the feed call. The onSuccess event returns the feed for the whole week as a JSONObject.
+`DefaultdListener` is an interface which needs to be implemented to listen to results of the feed call.

@@ -1,8 +1,3 @@
-// importing module
-// import * as request from 'request';
-// import { Constants } from "./Contants";
-// import https from "https"
-
 import request from "request";
 import { Constants } from "./Contants";
 import { ModelName } from "./ModelName";
@@ -11,12 +6,6 @@ import { MessageType } from "./MessageType";
 // error export
 import { InvalidParameterException } from "../network/ErrorResponse"
 
-
-// import ModelName
-//import { ModelName } from "./ModelName";
-
-
-// rating base exception
 
 
 export class Agent {
@@ -57,7 +46,7 @@ export class Agent {
     }
 
     // feed
-    feed(listener: defaultListener) {
+    feed(listener: defaultListener|null|undefined) {
 
         request.post(Constants.feedEndpoint, {
             json: { "token": this.token, "agent id": this.agent_id },
@@ -66,7 +55,8 @@ export class Agent {
             }
 
         }, (err, res, body) => {
-            console.log(res)
+            if (listener == null || listener == undefined) return
+
             if (err || res.statusCode !== 200) {
                 listener.onError(res.statusCode.toString(), res.body)
             } else {
@@ -92,7 +82,6 @@ export class Agent {
                     "content-type": "application/json"
                 }
             }, (err, res, body) => {
-                console.log(res)
                 if(err || res.statusCode !== 200){
                     listener.onError(res.statusCode.toString(), res.body)
                 } else {
@@ -100,7 +89,7 @@ export class Agent {
                 }
             })
         } else {
-            console.log("Rating api value is Null");
+            console.log("No listener supplied");
         }
 
     }

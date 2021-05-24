@@ -1,4 +1,10 @@
-import request from 'request';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var request = _interopDefault(require('request'));
 
 var Constants = function Constants() {}; // define req variable
 
@@ -121,10 +127,6 @@ var InvalidParameterException = /*#__PURE__*/function (_Error) {
   return InvalidParameterException;
 }( /*#__PURE__*/_wrapNativeSuper(Error));
 
-// importing module
-//import { ModelName } from "./ModelName";
-// rating base exception
-
 var Agent = /*#__PURE__*/function () {
   // define constructor
   function Agent(token, agent_id) {
@@ -191,7 +193,7 @@ var Agent = /*#__PURE__*/function () {
         "content-type": "application/json"
       }
     }, function (err, res, body) {
-      console.log(res);
+      if (listener == null || listener == undefined) return;
 
       if (err || res.statusCode !== 200) {
         listener.onError(res.statusCode.toString(), res.body);
@@ -228,8 +230,6 @@ var Agent = /*#__PURE__*/function () {
           "content-type": "application/json"
         }
       }, function (err, res, body) {
-        console.log(res);
-
         if (err || res.statusCode !== 200) {
           listener.onError(res.statusCode.toString(), res.body);
         } else {
@@ -237,32 +237,16 @@ var Agent = /*#__PURE__*/function () {
         }
       });
     } else {
-      console.log("Rating api value is Null");
+      console.log("No listener supplied");
     }
   };
 
   return Agent;
 }();
 
-var agent = /*#__PURE__*/new Agent("87e96f474b9bbd4a67c4cea97990ad322a665adaa244aeef716b2f78b3766ca3", "ihfazh");
-agent.dump("welcome to this app", 1, 1, false, {
-  onError: function onError(statusCode, response) {
-    console.log(statusCode);
-    console.log(response);
-  },
-  onSuccess: function onSuccess(week) {
-    console.log(week);
-  }
-});
-agent.feed({
-  onError: function onError(statusCode, response) {
-    console.log(statusCode);
-    console.log(response);
-  },
-  onSuccess: function onSuccess(week) {
-    console.log(week);
-  }
-}); // rating
-
-agent.rating();
-//# sourceMappingURL=jupita-sdk.esm.js.map
+exports.Agent = Agent;
+exports.Constants = Constants;
+exports.InvalidParameterException = InvalidParameterException;
+exports.MessageType = MessageType;
+exports.ModelName = ModelName;
+//# sourceMappingURL=jupita-agent-sdk.cjs.development.js.map
