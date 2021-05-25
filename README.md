@@ -50,7 +50,7 @@ var client = new jupita.Agent(token, agentId)
 Call the dump API as a message from Agent by specifying the message and clientId below;
 
 ```
-agent.dump("welcome to this app", 1, 1, false, {
+agent.dump("Hello", 1, 1, false, {
     onError: function(statusCode, response){
         console.log(statusCode)
         console.log(response)
