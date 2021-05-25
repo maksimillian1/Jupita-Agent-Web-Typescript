@@ -3,7 +3,7 @@
 
 # Jupita Agent TypeScript SDK
 
-This library is used to make API calls that will be used by the Jupita Agent, fully supports the 3 APIs that available for Jupita Agent. All API calls are made asynchronously, thus there are event listeners available to handle the API results.
+This library will allow you to make API calls with Jupita Agent. This SDK fully supports the 3 APIs available for Jupita Agent. All API calls are made asynchronously, thus there are event listeners available to handle the API results.
 
 ## APIs
 There are 3 APIs within the Juptia Agent product – `dump` `rating` & `feed`:
