@@ -115,7 +115,7 @@ The parameter is optional. You can also call it by `agent.feed()`
 Calling the `rating` API rating then becomes simple as it already has the required built-in parameters, such as;
 
 * `model_name` with a default value `JupitaV1`
-* `listener` if not defined you got `Rating api value is Null`
+* `listener` if not defined you will receive a `Rating` value of "`Null`".
 
 
 you can call this method with;
