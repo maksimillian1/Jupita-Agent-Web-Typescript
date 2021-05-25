@@ -28,8 +28,8 @@ The first step is to initialize the SDK and add the required authentication para
 
 ```
 var jupita = require("@jupita/jupita-agent-sdk")
-var token = "some token"
-var agentId = "111"
+var token = "authentication token"
+var agentId = "2"
 var client = new jupita.Agent(token, agentId)
 ```
 
@@ -47,7 +47,6 @@ agent.dump("Hello", 3, MessageType.Client, true)
 ```
 
 Currently, no data logged into the console, because you did not define a listener. You can define it like this:
-
 
 ```
 agent.dump("Hello", 3, MessageType.Client, true, {
@@ -105,7 +104,7 @@ If the API returns 200 the response is an object;
 }
 ```
 
-When you do a `feed` call, you can pass a listener parameter as you see above. However, the listener parameter is optional. You can skip this and call it `agent.feed()`
+When you make a `feed` API request, you may pass a listener parameter as above, however the listener parameter is optional. You may skip this and call `agent.feed()`.
 
 ### Call `Rating` API
 
@@ -158,13 +157,12 @@ that the Jupita Agent Web SDK is available within the scope of the project.
 
 ## Classes
 
-The available product under the Android SDK is Jupita Agent.
+The available product under this SDK is Jupita Agent. You may construct Jupita Agent by the public constructor and pass the two required parameters:
 
-You can construct it by it's public constructor and pass two required parameters:
-- Token you got from the jupita.io
-- Your Agent Id
+- Your authentication token,
+- Your Agent Id.
 
-You can [see here](#initialization)
+Then, [initialize](#initialization).
 
 ## Class Method Definition
 
