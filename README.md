@@ -36,21 +36,21 @@ var client = new jupita.Agent(token, agentId)
 
 ### Call `Dump` API
 
-`dump` has an optional parameter when it is not supplied, the default parameters is;
+When you need to dump the conversation from a client with the id 3 and the text is "hello", you should specify the `text`, `client_id`, and the `message_type` parameters sequentially
+
+agent.dump("Hello", 3, MessageType.Client)
+
+When you want to dump a `call` conversation, you can add an additional boolean parameter. `true` mean from a call, and `false` means not.
 
 ```
-{
-    userType: UserType.Agent,
-    callback: function(error, succcess){
-        //
-    }
-}
+agent.dump("Hello", 3, MessageType.Client, true)
 ```
 
-Call the dump API as a message from Agent by specifying the message and clientId below;
+Currently, no data logged into the console, because you did not define a listener. You can define it like this:
+
 
 ```
-agent.dump("welcome to this app", 1, 1, false, {
+agent.dump("Hello", 3, MessageType.Client, true, {
     onError: function(statusCode, response){
         console.log(statusCode)
         console.log(response)
@@ -62,13 +62,10 @@ agent.dump("welcome to this app", 1, 1, false, {
 })
 ```
 
-Parameters:
-
-* text (*required*)
-* client_id (*required*)
-* message_type (optional, default = Agent)
-* isCall (optional, default=false)
-* listener (optional, if not defined then the API will not be called)
+However, the only required parameters is the `text` and the `client_id`. When you did not specify the others, here is some assumptions:
+- `message_type` is `MessageType.Agent`. Means, that the message comes from the agent -> client
+- `isCall` is `false`
+- `listener` is null, so no listener called.
 
 If the API returns 200 the response is an object;
 
