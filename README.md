@@ -154,7 +154,7 @@ that the Jupita Agent Web SDK is available within the scope of the project.
 
 ## Classes
 
-The available product under the Jupita Agent Web SDK is call [read this](###initialization) 
+The available product under the Jupita Agent Web SDK is call [read this](###initialization).
 
 ## Error Handling
 
