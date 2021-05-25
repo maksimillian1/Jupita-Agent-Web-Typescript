@@ -146,6 +146,13 @@ If the API returns 200 the response is a JSON with;
 
 Error codes thrown are `401` when the token is incorrect and `400` when there is an attempt to dump gibberish content to the server, although the model does have an inbuilt gibberish detector.
 
+## Error Handling
+
+The SDK has an `InvalidParameterException` exception that will arises when:
+- `message_type` parameter in the `dump` method is not `1` or `0`
+- `model name` paramter in the `rating` method is not `JupitaV1` or `JupitaV2`
+
+
 ## Libraries
 
 Use Step [Initialization](#initialization) so
@@ -154,15 +161,13 @@ that the Jupita Agent Web SDK is available within the scope of the project.
 
 ## Classes
 
-The available product under the Jupita Agent Web SDK is call [read this](#initialization).
+The available product under the Android SDK is Jupita Agent.
 
-## Error Handling
+You can construct it by it's public constructor and pass two required parameters:
+- Token you got from the jupita.io
+- Your Agent Id
 
-The SDK has an `InvalidParameterException` exception that will arises when:
-- `message_type` parameter in the `dump` method is not `1` or `0`
-- `model name` paramter in the `rating` method is not `JupitaV1` or `JupitaV2`
-
-
+You can [see here](#initialization)
 
 ## Class Method Definition
 
