@@ -48,7 +48,7 @@ When you want to dump a message from an audio call (`isCall`) conversation, you 
 agent.dump("Hello", 3, MessageType.Client, true)
 ```
 
-Currently, no data logged into the console, because you did not define a listener. You can define it like this:
+Currently, as there is no data logged into the console (as you did not define a listener), you may define as per below;
 
 ```
 agent.dump("Hello", 3, MessageType.Client, true, {
@@ -63,9 +63,10 @@ agent.dump("Hello", 3, MessageType.Client, true, {
 })
 ```
 
-However, the only required parameters is the `text` and the `client_id`. When you did not specify the others, here is some assumptions:
-- `message_type` is `MessageType.Agent`. Means, that the message comes from the agent -> client
-- `isCall` is `false`
+However, the only required parameters is the `text` and the `client_id` parameters. If you do not specify others, below are the assumptions;
+
+- `message_type` is `MessageType.Agent`, meaning that the message has come from an agent,
+- `isCall` is `false`,
 - `listener` is null, so no listener called.
 
 If the API returns 200 the response is an object;
