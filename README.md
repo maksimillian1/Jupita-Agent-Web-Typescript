@@ -40,7 +40,7 @@ When calling the `dump` API, for example from a conversation with '3' being the 
 
 agent.dump("Hello", 3, MessageType.Client)
 
-When you want to dump a `call` conversation, you can add an additional boolean parameter. `true` mean from a call, and `false` means not.
+When you want to dump a message from an audio call (`isCall`) conversation, you may add an additional boolean parameter. `true` meaning the message is from an audio call, and `false` meaning it is not;
 
 ```
 agent.dump("Hello", 3, MessageType.Client, true)
