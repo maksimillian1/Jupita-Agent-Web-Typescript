@@ -22,7 +22,7 @@ npm install @jupita/jupita-agent-sdk
 ```
 
 
-The first step is initialize the SDK and add required auth like `token`, `agentId` then initialize the class object
+The first step is to initialize the SDK and add the required authentication parameters such as `token`, `agentId` then, initialize the class object;
 
 ### Initialization
 
