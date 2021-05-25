@@ -13,7 +13,7 @@ There are 3 APIs within the Juptia Agent product – `dump` `rating` & `feed`:
 - Feed provides you with some basic rating analytics.
 
 
-##  QuickStart
+##  Quickstart
 
 ### Installation
 
