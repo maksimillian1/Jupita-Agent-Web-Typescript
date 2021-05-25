@@ -108,7 +108,7 @@ If the API returns 200 the response is an object;
 }
 ```
 
-When you do a `feed` call, you can pass a listener parameter as you see above. However, the listener parameter is optional. You can skip this and call it `agent.feed()`
+When you make a `feed` API request, you may pass a listener parameter as above, however the listener parameter is optional. You may skip this and call `agent.feed()`
 
 ### Call `Rating` API
 
