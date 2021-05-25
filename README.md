@@ -63,7 +63,7 @@ agent.dump("Hello", 3, MessageType.Client, true, {
 })
 ```
 
-However, the only required parameters is the `text` and the `client_id` parameters. If you do not specify others, below are the assumptions;
+However, the only required parameters are the `text` and the `client_id` parameters. If you do not specify others, below are the assumptions;
 
 - `message_type` is `MessageType.Agent`, meaning that the message has come from an agent,
 - `isCall` is `false`,
