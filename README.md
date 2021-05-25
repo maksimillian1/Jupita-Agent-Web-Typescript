@@ -149,7 +149,7 @@ Error codes thrown are `401` when the token is incorrect and `400` when there is
 ## Libraries
 
 Use Step [Initialization](###initialization) so
-that the Jupita Agent Web SDK is available within the scope of the project 
+that the Jupita Agent Web SDK is available within the scope of the project.
 
 
 ## Classes
@@ -158,7 +158,7 @@ The available product under the Jupita Agent Web SDK is call [read this](###init
 
 ## Error Handling
 
-The SDK have an `InvalidParameterException` exception that will arises when:
+The SDK has an `InvalidParameterException` exception that will arises when:
 - `message_type` parameter in the `dump` method is not `1` or `0`
 - `model name` paramter in the `rating` method is not `JupitaV1` or `JupitaV2`
 
@@ -189,7 +189,7 @@ The second rating definition is created for future use when there will be multip
 
 To avoid illegal argument error use `ModelName.JUPITAV1` for the modelName. 
 
-`DefaultListener` is an interface which needs to be implemented to listen to results of the rating call
+`DefaultListener` is an interface which needs to be implemented to listen to results of the `rating` call.
 
 ### `Feed` Method Definition
 
