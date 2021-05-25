@@ -36,7 +36,7 @@ var client = new jupita.Agent(token, agentId)
 
 ### Call `Dump` API
 
-When calling the `dump` API, for example from a conversation with '3' being the clientID and the message being "hello", you should specify the `text`, `client_id`, and the `message_type` parameters sequentially;
+When calling the `dump` API, for example from a conversation with '3' being the clientID and the message being "hello", you should specify the `text`, `client_id`, and the `message_type` (since message dumps are seen as by default from an agent unless otherwise specified) parameters sequentially;
 
 agent.dump("Hello", 3, MessageType.Client)
 
