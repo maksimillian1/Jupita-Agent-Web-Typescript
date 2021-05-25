@@ -47,7 +47,7 @@ var client = new jupita.Agent(token, agentId)
 }
 ```
 
-Call the `dump` API as a message from Agent by specifying the message, `clientId` and `message type` below;
+Call the `dump` API as a message from Agent by specifying the message, `clientId` and `message type` as per below;
 
 ```
 agent.dump("Hello", 3, 1, false, {
