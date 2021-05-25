@@ -1,7 +1,7 @@
 
 ![npm](https://img.shields.io/npm/v/@jupita/jupita-agent-sdk)
 
-# Jupita Agent TypeScript SDK
+# Jupita Agent Typescript SDK
 
 This library will allow you to make API calls with Jupita Agent. This SDK fully supports the 3 APIs available for Jupita Agent. All API calls are made asynchronously, thus there are event listeners available to handle the API results.
 
