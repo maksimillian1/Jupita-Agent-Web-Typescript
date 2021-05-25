@@ -118,7 +118,7 @@ To call the API rating is quite easy because it already has built-in parameters 
 * `listener` if not defined you got `Rating api value is Null`
 
 
-you can call this method with
+you can call this method with;
 
 ```
 agent.rating()
@@ -134,7 +134,7 @@ or
 agent.rating(ModelName.JUPITA1, listener)
 ```
 
-If the API returns 200 the response is a JSON with
+If the API returns 200 the response is a JSON with;
 
 ```
 {
