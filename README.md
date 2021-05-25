@@ -148,13 +148,13 @@ Error codes thrown are `401` when the token is incorrect and `400` when there is
 
 ## Libraries
 
-Use Step [Initialization](###initialization) so
+Use Step [Initialization](#initialization) so
 that the Jupita Agent Web SDK is available within the scope of the project.
 
 
 ## Classes
 
-The available product under the Jupita Agent Web SDK is call [read this](###initialization).
+The available product under the Jupita Agent Web SDK is call [read this](#initialization).
 
 ## Error Handling
 
