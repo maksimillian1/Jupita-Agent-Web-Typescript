@@ -28,7 +28,7 @@ The first step is to initialize the SDK and add the required authentication para
 
 ```
 var jupita = require("@jupita/jupita-agent-sdk")
-var token = "some token"
+var token = "authentication token"
 var agentId = "111"
 var client = new jupita.Agent(token, agentId)
 ```
