@@ -36,7 +36,7 @@ var client = new jupita.Agent(token, agentId)
 
 ### Call `Dump` API
 
-`dump` has an optional parameter when it is not supplied, the default parameters is
+`dump` has an optional parameter when it is not supplied, the default parameters is;
 
 ```
 {
@@ -70,7 +70,7 @@ Parameters:
 * isCall (optional, default=false)
 * listener (optional, if not defined then the API will not be called)
 
-If the API returns 200 the response is an object
+If the API returns 200 the response is an object;
 
 ```
 {
@@ -96,7 +96,7 @@ agent.feed({
 ```
 
 
-If the API returns 200 the response is an object
+If the API returns 200 the response is an object;
 
 ```
 {
