@@ -161,13 +161,12 @@ that the Jupita Agent Web SDK is available within the scope of the project.
 
 ## Classes
 
-The available product under the Android SDK is Jupita Agent.
+The available product under this SDK is Jupita Agent. You may construct Jupita Agent by the public constructor and pass the two required parameters:
 
-You can construct it by it's public constructor and pass two required parameters:
-- Token you got from the jupita.io
-- Your Agent Id
+- Your authentication token,
+- Your Agent Id.
 
-You can [see here](#initialization)
+Then, [initialise](#initialization).
 
 ## Class Method Definition
 
