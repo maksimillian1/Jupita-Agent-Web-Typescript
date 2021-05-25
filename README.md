@@ -166,7 +166,7 @@ The available product under this SDK is Jupita Agent. You may construct Jupita A
 - Your authentication token,
 - Your Agent Id.
 
-Then, [initialise](#initialization).
+Then, [initialize](#initialization).
 
 ## Class Method Definition
 
