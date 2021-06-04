@@ -8,7 +8,7 @@ This library will allow you to make API calls with Jupita Agent. This SDK fully 
 ## Overview
 Jupita Agent is an API product that allows machine learning powered analysis of conversational data, via many mediums, between an agent (any service provider or staff member/company representative) and a client/customer. Within the SDK documentation, `message type` will simply refer to who is speaking/typing. Message type '0' = `agent`, and message type '1' = `client`, although these labels are normally handled by the SDK.
 
-The required parameters for the APIs include setting `message type`, along with assigning a `agent` + `client` ID to be passed - how this is structured or deployed is dependent on your systems/platforms architecture, therefore it is completely flexible and customisable. One such example would be to assign your existing internal user IDs or employee IDs for the `agent` ID, and a unique random ID for the `client` ID. Please note when assigning the `agent` ID that no data will be available for that particular agent from any APIs until the agent has sent at least 1 utterance via the `dump` API. 
+The required parameters for the APIs include setting `message type`, along with assigning a `agent` + `client` ID to be passed - how this is structured or deployed is dependent on your systems/platforms architecture, therefore it is completely flexible and customisable. Please note when assigning the `agent` ID that no data will be available for that particular agent from any of the APIs until the agent has sent at least 1 utterance via the `dump` API. 
 
 ## APIs
 There are 3 APIs within the Juptia Agent product – `dump` `rating` & `feed`:
