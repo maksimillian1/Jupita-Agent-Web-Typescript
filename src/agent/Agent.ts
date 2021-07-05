@@ -30,7 +30,7 @@ export class Agent {
         // check optional parameter for listener
         if (listener !== null) {
             request.post(Constants.dumpEndpoint, {
-                json: { "token": this.token, "agent id": this.agent_id, "client id": client_id, "message type": message_type, "text": text, "isCall": isCall },
+                json: { "token": this.token, "agent_id": this.agent_id, "client_id": client_id, "message_type": message_type, "text": text, "isCall": isCall },
                 headers: {
                     "content-type": "application/json"
                 }
@@ -49,7 +49,7 @@ export class Agent {
     feed(listener: defaultListener|null|undefined) {
 
         request.post(Constants.feedEndpoint, {
-            json: { "token": this.token, "agent id": this.agent_id },
+            json: { "token": this.token, "agent_id": this.agent_id },
             headers: {
                 "content-type": "application/json"
             }
@@ -77,7 +77,7 @@ export class Agent {
         // optional paramater
         if (listener !== null) {
             request.post(Constants.ratingEntpoint, {
-                json: {"token": this.token, "agent id": this.agent_id, "model": model_name},
+                json: {"token": this.token, "agent_id": this.agent_id, "model": model_name},
                 headers: {
                     "content-type": "application/json"
                 }
