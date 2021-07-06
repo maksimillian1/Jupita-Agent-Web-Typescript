@@ -27,7 +27,7 @@ npm install @jupita/jupita-agent-sdk
 ```
 
 
-The first step is to initialize the SDK and add the required authentication parameters such as `token`, `agentId` then, initialize the class object.
+The first step is to initialize the SDK and add the required authentication parameters such as `token`, `agent_id` then, initialize the class object.
 
 ### Initialization
 
@@ -154,7 +154,7 @@ Error codes thrown are `401` when the token is incorrect and `400` when there is
 
 The SDK has an `InvalidParameterException` exception that will arises when:
 - `message_type` parameter in the `dump` method is not `1` or `0`
-- `model name` parameter in the `rating` method is not `JupitaV1` or `JupitaV2`
+- `model` name parameter in the `rating` method is not `JupitaV1` or `JupitaV2`
 
 
 ## Libraries
