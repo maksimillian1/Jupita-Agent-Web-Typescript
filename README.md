@@ -118,7 +118,7 @@ When you make a `feed` API request, you may pass a listener parameter as above, 
 
 Calling the `rating` API then becomes simple as it already has the required built-in parameters, such as;
 
-* `model_name` with a default value `JupitaV1`
+* `model` name with a default value `JupitaV1`
 * `listener` if not defined you will receive a `Rating` value of `Null`.
 
 
