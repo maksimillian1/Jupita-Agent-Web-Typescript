@@ -1,5 +1,5 @@
 // baseListener
 interface defaultListener {
-    onSuccess(week: object): void;
+    onSuccess(response: object): void;
     onError(statusCode: string, response: object): void;
 }
