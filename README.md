@@ -6,7 +6,7 @@
 This library will allow you to make API calls with Jupita Agent. This SDK fully supports the 3 APIs available for Jupita Agent. All API calls are made asynchronously, thus there are event listeners available to handle the API results.
 
 ## Overview
-Jupita Agent is an API product that provides deep learning powered analysis of conversational data, via many mediums, between an agent (any service provider or staff member/company representative) and a client/customer. Within the SDK documentation, `message_type` will simply refer to who is speaking/typing. `Message_type` '0' = `agent`, and `message_type` '1' = `client`, although these labels are normally handled by the SDK.
+Jupita Agent is an API product that provides deep learning powered analysis of conversational data, via many mediums, between an agent and client. Within the SDK documentation, `message_type` will simply refer to who is speaking. `Message_type` '0' = `agent`, and `message_type` '1' = `client`, although these labels are handled by the SDK.
 
 The required parameters for the APIs include setting `message_type`, along with assigning an `agent_id` + `client_id` to be passed - how this is structured or deployed is dependent on your systems/platforms architecture, therefore it is completely flexible and customisable. Please note when assigning the `agent_id` that no data will be available for that particular agent from any of the APIs until the agent has sent at least 1 utterance via the `dump` API. 
 
@@ -74,7 +74,7 @@ However, the only required parameters are the `text` and the `client_id` paramet
 - `isCall` is `false`,
 - `listener` is null, so no listener called.
 
-If the API returns 200 the response is an object;
+If the API returns 200 the response is a JSON object;
 
 ```
 {
@@ -100,7 +100,7 @@ agent.feed({
 ```
 
 
-If the API returns 200 the response is an object;
+If the API returns 200 the response is a JSON object;
 
 ```
 {
@@ -119,7 +119,7 @@ When you make a `feed` API request, you may pass a listener parameter as above, 
 Calling the `rating` API then becomes simple as it already has the required built-in parameters, such as;
 
 * `model` name with a default value `JupitaV1`
-* `listener` if not defined you will receive a `Rating` value of `Null`.
+* `listener` if not defined you will receive a `rating` value of `null`.
 
 
 You can call this method with;
@@ -138,7 +138,7 @@ or
 agent.rating(ModelName.JUPITA1, listener)
 ```
 
-If the API returns 200 the response is a JSON with;
+If the API returns 200 the response is a JSON object with;
 
 ```
 {
